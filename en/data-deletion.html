@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>How to delete your data · Media Engine Publisher</title>
+<meta name="description" content="Instructions to delete the data Media Engine Publisher stores and to remove its access to YouTube, Facebook and Instagram.">
+<link rel="canonical" href="https://haurglass.github.io/en/data-deletion.html">
+<link rel="alternate" hreflang="en" href="https://haurglass.github.io/en/data-deletion.html">
+<link rel="alternate" hreflang="es-419" href="https://haurglass.github.io/es/borrado-de-datos.html">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Skip to content</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <p class="marca"><a href="./">Media Engine Publisher</a></p>
+    <nav class="navegacion" aria-label="Site sections">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="data-deletion.html" aria-current="page">Data deletion</a></li>
+        <li><a href="../es/borrado-de-datos.html" hreflang="es-419" lang="es-419">Español</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido" class="contenedor">
+  <h1>How to delete your data from Media Engine Publisher</h1>
+  <p class="meta">Effective <time datetime="2026-10-31">2026-10-31</time>. These are the data deletion instructions for Media Engine Publisher. Contact: <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+
+  <h2 id="what-data">What data the tool may hold</h2>
+  <p>Media Engine Publisher only stores data about its owner's accounts, and only on the owner's computer: the encrypted access tokens, the IDs of the owner's accounts, the data obtained from the platforms about each video it published (the reference of its upload, its ID, its link and the observed statuses), a log of the owner's publications (which short, when, with which text and to which account) and technical logs that contain no tokens. The details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2 id="email">Option 1: request it by email</h2>
+  <ol>
+    <li>Write to <a href="mailto:haurglass28@gmail.com?subject=Data%20deletion">haurglass28@gmail.com</a> with the subject "Data deletion".</li>
+    <li>State the platform (YouTube, Facebook or Instagram) and the account: the name of the channel, the Page or the Instagram account.</li>
+    <li>The owner disconnects the account with <code>media-engine publish account forget</code>, which immediately deletes the tokens and the data obtained from the platforms (that of an upload in progress, as soon as it is settled whether it was published), all within 7 calendar days at most, and you will receive an email confirming what was deleted.</li>
+  </ol>
+  <p>This option is available to anyone, with no need to have an account or to use the tool.</p>
+
+  <h2 id="revoke">Option 2: remove the tool's access</h2>
+  <ul>
+    <li><strong>Google and YouTube:</strong> at <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>, choose Media Engine Publisher and remove its access.</li>
+    <li><strong>Facebook:</strong> in Settings &amp; Privacy &gt; Settings &gt; Apps and Websites (<a href="https://www.facebook.com/settings?tab=applications">https://www.facebook.com/settings?tab=applications</a>), choose Media Engine Publisher and remove it. If it is listed as a business integration, remove it under Business Integrations (<a href="https://www.facebook.com/settings?tab=business_tools">https://www.facebook.com/settings?tab=business_tools</a>).</li>
+    <li><strong>Instagram:</strong> in the Apps and Websites section of Instagram's settings (<a href="https://www.instagram.com/accounts/manage_access/">https://www.instagram.com/accounts/manage_access/</a>). Because the tool publishes to Instagram through the Facebook Page, removing it on Facebook also removes its access to Instagram.</li>
+  </ul>
+  <p>After access is revoked, the tokens stop working immediately. Their encrypted copy, which no longer works, stays stored until the owner deletes it with the command in the next section. The tool detects the revocation the next time it uses that access and the platform refuses the token: when refreshing it, when publishing or when reading a video's status. It then marks the credential as revoked, and <code>media-engine publish account status</code> shows it that way and reminds the owner to delete it. Until it uses the access again, the tool does not know it was revoked. A refusal the platform attributes to an expired token, or to a Facebook account that still has to be confirmed, is not taken for a revocation. Data obtained from that platform is deleted within 7 days at most from when the tool detects the revocation: its periodic step (<code>media-engine publish tick</code>) deletes it as soon as it finds the account without a credential or with its credential revoked.</p>
+
+  <h2 id="owner">For the tool's owner</h2>
+  <p>The owner, who is its only user, disconnects an account with the command below, which immediately deletes the stored credential with its tokens and the data obtained from the platforms about that account's publications. For Google, it first revokes the authorization, except with <code>--sin-revocar</code>, an option meant only for when the stored token can no longer be opened, which leaves the revocation to be done by hand. For Meta, the command does not withdraw the authorization.</p>
+  <pre><code>media-engine publish account forget youtube &lt;channel-id&gt;
+media-engine publish account forget meta &lt;page-id&gt;</code></pre>
+  <p>Facebook and Instagram share a single connection (<code>meta</code>). Because the tool does not withdraw the authorization on Meta, besides running the command the app must be removed in Facebook's Settings &gt; Apps and Websites, as described above. The command deletes on the spot the data obtained from the platforms (reference of each upload, ID, link and statuses of each video) and says how many publications it deleted. If one has an upload in progress, it keeps that data until it is settled whether it was published, because it is the only way to check, says so, and the periodic step (<code>media-engine publish tick</code>) deletes it as soon as that happens.</p>
+
+  <h2 id="scope">What is not deleted</h2>
+  <p>The log of what the owner published to the owner's own accounts (which short, when, with which text and to which account) is not deleted when access is revoked or when deletion is requested: it is kept as the audit record of the owner's own publications.</p>
+  <p class="aviso">Deleting the data stored by Media Engine Publisher does not in any way affect data stored by YouTube, Facebook or Instagram. Videos already published, their comments and their statistics remain on those platforms, and deleting them must be done directly on YouTube (for example, in YouTube Studio), Facebook or Instagram.</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>Any question about data deletion is handled at <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+</main>
+<footer class="pie contenedor">
+  <p><a href="./">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+</footer>
+</body>
+</html>

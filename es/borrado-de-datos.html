@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Cómo borrar tus datos · Media Engine Publisher</title>
+<meta name="description" content="Instrucciones para borrar los datos que guarda Media Engine Publisher y para quitarle el acceso a YouTube, Facebook e Instagram.">
+<link rel="canonical" href="https://haurglass.github.io/es/borrado-de-datos.html">
+<link rel="alternate" hreflang="es-419" href="https://haurglass.github.io/es/borrado-de-datos.html">
+<link rel="alternate" hreflang="en" href="https://haurglass.github.io/en/data-deletion.html">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <p class="marca"><a href="./">Media Engine Publisher</a></p>
+    <nav class="navegacion" aria-label="Secciones del sitio">
+      <ul>
+        <li><a href="./">Inicio</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="borrado-de-datos.html" aria-current="page">Borrado de datos</a></li>
+        <li><a href="../en/data-deletion.html" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido" class="contenedor">
+  <h1>Cómo borrar tus datos de Media Engine Publisher</h1>
+  <p class="meta">Vigente desde el <time datetime="2026-10-31">2026-10-31</time>. Estas son las instrucciones de borrado de datos de Media Engine Publisher. Contacto: <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+
+  <h2 id="que-datos">Qué datos puede tener la herramienta</h2>
+  <p>Media Engine Publisher solo guarda datos de las cuentas de su dueño, y solo en su computadora: los tokens de acceso cifrados, los identificadores de sus cuentas, los datos obtenidos de las plataformas sobre cada video que publicó (la referencia de su subida, su identificador, su enlace y los estados observados), una bitácora de sus publicaciones (qué short, cuándo, con qué texto y en qué cuenta) y registros técnicos que no contienen tokens. El detalle está en la <a href="privacidad.html">política de privacidad</a>.</p>
+
+  <h2 id="correo">Opción 1: pedirlo por correo</h2>
+  <ol>
+    <li>Escribe a <a href="mailto:haurglass28@gmail.com?subject=Borrado%20de%20datos">haurglass28@gmail.com</a> con el asunto «Borrado de datos».</li>
+    <li>Indica la plataforma (YouTube, Facebook o Instagram) y la cuenta: el nombre del canal, de la Página o de la cuenta de Instagram.</li>
+    <li>El dueño desconecta la cuenta con <code>media-engine publish account forget</code>, que borra de inmediato los tokens y los datos obtenidos de las plataformas (los de una subida en curso, en cuanto queda asentado si llegó a publicarse), todo en un máximo de 7 días naturales, y recibirás un correo que confirma qué se borró.</li>
+  </ol>
+  <p>Esta opción está disponible para cualquier persona, sin necesidad de tener una cuenta ni de usar la herramienta.</p>
+
+  <h2 id="revocar">Opción 2: quitarle el acceso a la herramienta</h2>
+  <ul>
+    <li><strong>Google y YouTube:</strong> en <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>, elige Media Engine Publisher y quita su acceso.</li>
+    <li><strong>Facebook:</strong> en Configuración y privacidad &gt; Configuración &gt; Apps y sitios web (<a href="https://www.facebook.com/settings?tab=applications">https://www.facebook.com/settings?tab=applications</a>), elige Media Engine Publisher y quítala. Si aparece como integración comercial, quítala en Integraciones comerciales (<a href="https://www.facebook.com/settings?tab=business_tools">https://www.facebook.com/settings?tab=business_tools</a>).</li>
+    <li><strong>Instagram:</strong> en la sección Apps y sitios web de la configuración de Instagram (<a href="https://www.instagram.com/accounts/manage_access/">https://www.instagram.com/accounts/manage_access/</a>). Como la herramienta publica en Instagram a través de la Página de Facebook, quitarla en Facebook también le retira el acceso a Instagram.</li>
+  </ul>
+  <p>Después de revocar, los tokens dejan de funcionar de inmediato. Su copia cifrada, que ya no sirve, sigue guardada hasta que el dueño la borra con el comando de la sección siguiente. La herramienta detecta la revocación la próxima vez que usa ese acceso y la plataforma rechaza el token: al renovarlo, al publicar o al leer el estado de un video. Entonces marca la credencial como revocada, y <code>media-engine publish account status</code> la muestra así y le recuerda que la borre. Mientras no vuelva a usar el acceso, la herramienta no sabe que se revocó. Un rechazo que la plataforma atribuye a un token vencido, o a una cuenta de Facebook que falta confirmar, no se toma por revocación. Los datos obtenidos de esa plataforma se borran en un máximo de 7 días desde que la herramienta detecta la revocación: su paso periódico (<code>media-engine publish tick</code>) los borra en cuanto encuentra la cuenta sin credencial o con la credencial revocada.</p>
+
+  <h2 id="dueno">Para el dueño de la herramienta</h2>
+  <p>El dueño, que es su único usuario, desconecta una cuenta con el comando de abajo, que borra de inmediato la credencial guardada con sus tokens y los datos obtenidos de las plataformas sobre las publicaciones de esa cuenta. En Google, antes de borrarla revoca la autorización, salvo con <code>--sin-revocar</code>, una opción que solo sirve cuando el token guardado ya no se puede abrir y que deja la revocación para hacerla a mano. En Meta, el comando no retira la autorización.</p>
+  <pre><code>media-engine publish account forget youtube &lt;id-del-canal&gt;
+media-engine publish account forget meta &lt;id-de-la-página&gt;</code></pre>
+  <p>Facebook e Instagram comparten una sola conexión (<code>meta</code>). Como la herramienta no retira la autorización en Meta, además del comando hay que quitar la app en Configuración &gt; Apps y sitios web de Facebook, como se indica arriba. El comando borra en el acto los datos obtenidos de las plataformas (referencia de cada subida, identificador, enlace y estados de cada video) y dice cuántas publicaciones borró. Si alguna tiene una subida en curso, conserva sus datos hasta que quede asentado si llegó a publicarse, porque son lo único que permite comprobarlo, lo dice, y el paso periódico (<code>media-engine publish tick</code>) los borra en cuanto eso ocurre.</p>
+
+  <h2 id="alcance">Qué no se borra</h2>
+  <p>La bitácora de lo que el dueño publicó en sus propias cuentas (qué short, cuándo, con qué texto y en qué cuenta) no se borra al revocar el acceso ni al pedir el borrado: se conserva como registro de auditoría de sus propias publicaciones.</p>
+  <p class="aviso">Borrar los datos que guarda Media Engine Publisher no afecta de ninguna forma los datos que guardan YouTube, Facebook o Instagram. Los videos ya publicados, sus comentarios y sus estadísticas siguen en esas plataformas, y para borrarlos hay que hacerlo directamente en YouTube (por ejemplo, desde YouTube Studio), en Facebook o en Instagram.</p>
+
+  <h2 id="contacto">Contacto</h2>
+  <p>Cualquier pregunta sobre el borrado de datos se atiende en <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+</main>
+<footer class="pie contenedor">
+  <p><a href="./">Inicio</a> · <a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de servicio</a></p>
+</footer>
+</body>
+</html>

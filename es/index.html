@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es-419">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Media Engine Publisher · Inicio</title>
+<meta name="description" content="Media Engine Publisher es una herramienta personal que publica los videos cortos de su dueño en su propio canal de YouTube, su Página de Facebook y su cuenta profesional de Instagram.">
+<link rel="canonical" href="https://haurglass.github.io/es/">
+<link rel="alternate" hreflang="es-419" href="https://haurglass.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://haurglass.github.io/en/">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <p class="marca"><a href="./">Media Engine Publisher</a></p>
+    <nav class="navegacion" aria-label="Secciones del sitio">
+      <ul>
+        <li><a href="./" aria-current="page">Inicio</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="borrado-de-datos.html">Borrado de datos</a></li>
+        <li><a href="../en/" hreflang="en" lang="en">English</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido" class="contenedor">
+  <h1>Media Engine Publisher</h1>
+  <p class="entrada">Media Engine Publisher es una herramienta personal que usa únicamente su dueño, Fernando, para publicar los videos cortos que él mismo produce en sus propias cuentas de YouTube, Facebook e Instagram.</p>
+
+  <h2 id="que-hace">Qué hace</h2>
+  <p>La herramienta corre en la computadora de su dueño, sin servidor ni servicio en línea, y a partir de un video terminado que él ya revisó y aprobó realiza lo siguiente:</p>
+  <ul>
+    <li>Sube el video, con su título, al canal de YouTube del dueño.</li>
+    <li>Lo publica como reel, sin texto, en la Página de Facebook del dueño y en la cuenta profesional de Instagram vinculada a esa Página.</li>
+    <li>Programa cada publicación en los horarios fijos que define el dueño, por lo que él puede revisarla y cancelarla antes de que salga.</li>
+    <li>Consulta el estado de cada video que publicó con el fin de confirmar que quedó publicado una sola vez, ya que una subida interrumpida nunca se repite a ciegas.</li>
+  </ul>
+  <p>Los videos de TikTok el dueño los publica a mano, por lo que Media Engine Publisher no se conecta a TikTok ni tiene acceso a ninguna cuenta de esa plataforma.</p>
+
+  <h2 id="quien">Quién la usa</h2>
+  <p>Solo su dueño. Media Engine Publisher no tiene registro de usuarios, no ofrece cuentas a otras personas, no se vende ni se distribuye y no presta servicio a terceros: únicamente publica en cuentas que pertenecen a su dueño.</p>
+
+  <h2 id="permisos">Qué datos pide a Google y a Meta, y para qué</h2>
+  <p>El dueño autoriza la herramienta con OAuth 2.0, el protocolo con el que Google y Meta permiten que una aplicación actúe en una cuenta sin conocer su contraseña. Estos son los únicos permisos que pide:</p>
+  <div class="tabla">
+    <table>
+      <caption>Permisos y su uso</caption>
+      <thead>
+        <tr><th scope="col">Permiso</th><th scope="col">Para qué lo usa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>YouTube: <code>youtube.upload</code></td><td>Subir los videos del dueño a su canal.</td></tr>
+        <tr><td>YouTube: <code>youtube.readonly</code></td><td>Comprobar que la cuenta autorizada es el canal del dueño, y consultar sus subidas recientes y el estado de cada video que la herramienta subió.</td></tr>
+        <tr><td>Facebook: <code>pages_show_list</code></td><td>Encontrar la Página del dueño entre las Páginas que administra.</td></tr>
+        <tr><td>Facebook: <code>pages_read_engagement</code></td><td>Leer los datos básicos de la Página, como la cuenta de Instagram vinculada, y el estado de los reels publicados.</td></tr>
+        <tr><td>Facebook: <code>pages_manage_posts</code></td><td>Publicar los reels en la Página.</td></tr>
+        <tr><td>Instagram: <code>instagram_basic</code></td><td>Leer los datos básicos de la cuenta y sus publicaciones recientes, con el fin de confirmar cada publicación sin duplicarla.</td></tr>
+        <tr><td>Instagram: <code>instagram_content_publish</code></td><td>Publicar los reels en la cuenta.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>La herramienta no lee estadísticas, comentarios, mensajes ni seguidores. Qué guarda, dónde y durante cuánto tiempo está en la <a href="privacidad.html">política de privacidad</a>.</p>
+
+  <h2 id="servicios">Servicios que usa</h2>
+  <p>Media Engine Publisher usa YouTube API Services (los servicios de API de YouTube) y las API de Meta para Facebook e Instagram. Al usarla se aplican los <a href="https://www.youtube.com/t/terms">Términos de Servicio de YouTube</a> y la <a href="http://www.google.com/policies/privacy">Política de Privacidad de Google</a>.</p>
+  <!-- Logo de YouTube: descarga el logo oficial en https://brand.youtube/ , guárdalo sin
+       modificarlo como img/youtube.png en la raíz del sitio y reemplaza el enlace de texto de
+       abajo por este (ajusta width y height a las proporciones del archivo):
+       <a href="https://www.youtube.com/"><img src="../img/youtube.png" alt="YouTube" width="90" height="20"></a>
+       Reglas: https://developers.google.com/youtube/terms/branding-guidelines (el logo enlaza a
+       YouTube, nunca va junto al nombre de la app y nunca es lo más prominente de la página). -->
+  <p>Sube videos a <a href="https://www.youtube.com/">YouTube</a>.</p>
+
+  <h2 id="documentos">Documentos</h2>
+  <ul>
+    <li><a href="privacidad.html">Política de privacidad</a></li>
+    <li><a href="terminos.html">Términos de servicio</a></li>
+    <li><a href="borrado-de-datos.html">Cómo borrar tus datos</a></li>
+  </ul>
+
+  <h2 id="contacto">Contacto</h2>
+  <p>Preguntas, quejas o solicitudes sobre la herramienta: <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+</main>
+<footer class="pie contenedor">
+  <p>Media Engine Publisher no está afiliada a Google, YouTube, Meta, Facebook, Instagram ni TikTok, ni cuenta con su respaldo. Esos nombres son marcas de sus respectivos dueños.</p>
+  <p>Este sitio no usa cookies, analíticas, anuncios ni recursos de terceros.</p>
+</footer>
+</body>
+</html>
