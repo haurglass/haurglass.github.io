@@ -35,8 +35,8 @@
   <h2 id="what-it-does">What it does</h2>
   <p>The tool runs on its owner's computer, with no server and no online service. Starting from a finished video that the owner has already reviewed and approved, it does the following:</p>
   <ul>
-    <li>Uploads the video, with its title, to the owner's YouTube channel.</li>
-    <li>Publishes it as a reel, with no text, on the owner's Facebook Page and on the Instagram professional account linked to that Page.</li>
+    <li>Uploads the video, with its title, to the owner's YouTube channel it was made for. The owner can connect several channels, all of them the owner's own.</li>
+    <li>Publishes it as a reel, with no text, on the owner's Facebook Page for that channel and on the Instagram professional account linked to that Page.</li>
     <li>Schedules each publication at fixed times the owner defines, so the owner can review it and cancel it before it goes out.</li>
     <li>Checks the status of every video it published to confirm it was published exactly once, because an interrupted upload is never blindly repeated.</li>
   </ul>
@@ -54,8 +54,8 @@
         <tr><th scope="col">Permission</th><th scope="col">What it is used for</th></tr>
       </thead>
       <tbody>
-        <tr><td>YouTube: <code>youtube.upload</code></td><td>Upload the owner's videos to the owner's channel.</td></tr>
-        <tr><td>YouTube: <code>youtube.readonly</code></td><td>Confirm that the authorized account is the owner's channel, and read its recent uploads and the status of each video the tool uploaded.</td></tr>
+        <tr><td>YouTube: <code>youtube.upload</code></td><td>Upload the owner's videos to the owner's channels.</td></tr>
+        <tr><td>YouTube: <code>youtube.readonly</code></td><td>Confirm that each authorized account is one of the owner's channels, and read its recent uploads and the status of each video the tool uploaded.</td></tr>
         <tr><td>Facebook: <code>pages_show_list</code></td><td>Find the owner's Page among the Pages the owner manages.</td></tr>
         <tr><td>Facebook: <code>pages_read_engagement</code></td><td>Read the Page's basic data, such as its linked Instagram account, and the status of published reels.</td></tr>
         <tr><td>Facebook: <code>pages_manage_posts</code></td><td>Publish reels to the Page.</td></tr>

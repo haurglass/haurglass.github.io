@@ -64,7 +64,7 @@
   <p>Media Engine Publisher es un programa que corre en la computadora de su dueño y que él usa para publicar los videos cortos que produce en tres cuentas que le pertenecen: un canal de YouTube, una Página de Facebook y la cuenta profesional de Instagram vinculada a esa Página. No tiene registro de usuarios, no ofrece cuentas a otras personas y no presta servicio a terceros. Los videos de TikTok el dueño los publica a mano, por lo que la herramienta no se conecta a TikTok ni obtiene ningún dato de esa plataforma.</p>
 
   <h2 id="youtube">Uso de YouTube API Services</h2>
-  <p>Media Engine Publisher usa YouTube API Services (los servicios de API de YouTube) para subir videos al canal del dueño y consultar el estado de esos videos. Al usar la herramienta se aplican los <a href="https://www.youtube.com/t/terms">Términos de Servicio de YouTube</a> (https://www.youtube.com/t/terms) y la <a href="http://www.google.com/policies/privacy">Política de Privacidad de Google</a> (http://www.google.com/policies/privacy).</p>
+  <p>Media Engine Publisher usa YouTube API Services (los servicios de API de YouTube) para subir videos a los canales del dueño y consultar el estado de esos videos. Al usar la herramienta se aplican los <a href="https://www.youtube.com/t/terms">Términos de Servicio de YouTube</a> (https://www.youtube.com/t/terms) y la <a href="http://www.google.com/policies/privacy">Política de Privacidad de Google</a> (http://www.google.com/policies/privacy).</p>
   <p>El uso que Media Engine Publisher hace de la información recibida de las API de Google, así como su transferencia a cualquier otra aplicación, se ajusta a la <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de Datos del Usuario de los Servicios de API de Google</a>, incluidos los requisitos de Uso Limitado.</p>
 
   <h2 id="datos">Qué datos obtiene y para qué</h2>
@@ -79,7 +79,7 @@
         <tr><th scope="col">Dato</th><th scope="col">Para qué</th></tr>
       </thead>
       <tbody>
-        <tr><td>Tokens de acceso y de actualización de OAuth</td><td>Actuar en el canal sin conocer la contraseña del dueño.</td></tr>
+        <tr><td>Tokens de acceso y de actualización de OAuth</td><td>Actuar en cada canal conectado sin conocer la contraseña del dueño.</td></tr>
         <tr><td>Identificador y datos básicos del canal autorizado (YouTube los entrega junto con el identificador, por ejemplo el nombre del canal)</td><td>Comprobar, antes de guardar la autorización, que la cuenta autorizada es el canal configurado y no otro. Solo se usa el identificador, y los datos básicos no se guardan.</td></tr>
         <tr><td>Datos básicos de las subidas más recientes del canal (hasta 50): su identificador, su título, su descripción y los demás datos públicos que YouTube entrega con ellos, como la fecha de publicación</td><td>Confirmar, por coincidencia exacta del título, por no tener descripción (la herramienta no envía ninguna) y por su fecha de publicación, si una subida interrumpida llegó a publicarse, con el fin de nunca subir el mismo video dos veces. Se consultan en memoria y no se guardan, salvo el identificador y el enlace del video que coincide.</td></tr>
         <tr><td>Estado de cada video que la herramienta subió (privacidad, subida y procesamiento)</td><td>Saber si el video quedó publicado.</td></tr>

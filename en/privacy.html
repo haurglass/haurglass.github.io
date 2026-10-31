@@ -64,7 +64,7 @@
   <p>Media Engine Publisher is a program that runs on its owner's computer and that the owner uses to publish the short videos the owner produces to three accounts that belong to the owner: a YouTube channel, a Facebook Page and the Instagram professional account linked to that Page. It has no user sign-up, offers no accounts to other people and does not provide a service to anyone else. The owner publishes TikTok videos by hand, so the tool does not connect to TikTok and obtains no data from it.</p>
 
   <h2 id="youtube">Use of YouTube API Services</h2>
-  <p>Media Engine Publisher uses YouTube API Services to upload videos to the owner's channel and to check the status of those videos. Using the tool is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> (https://www.youtube.com/t/terms) and the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a> (http://www.google.com/policies/privacy).</p>
+  <p>Media Engine Publisher uses YouTube API Services to upload videos to the owner's channels and to check the status of those videos. Using the tool is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> (https://www.youtube.com/t/terms) and the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a> (http://www.google.com/policies/privacy).</p>
   <p>Media Engine Publisher's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
   <h2 id="data">What data it obtains and why</h2>
@@ -79,7 +79,7 @@
         <tr><th scope="col">Data</th><th scope="col">Purpose</th></tr>
       </thead>
       <tbody>
-        <tr><td>OAuth access and refresh tokens</td><td>Act on the channel without knowing the owner's password.</td></tr>
+        <tr><td>OAuth access and refresh tokens</td><td>Act on each connected channel without knowing the owner's password.</td></tr>
         <tr><td>ID and basic details of the authorized channel (YouTube returns them with the ID, for example the channel name)</td><td>Confirm, before the authorization is stored, that the authorized account is the configured channel and not another one. Only the ID is used, and the basic details are not stored.</td></tr>
         <tr><td>Basic details of the channel's most recent uploads (up to 50): their ID, title, description and the other public details YouTube returns with them, such as the publication date</td><td>Confirm, by exact match of the title, by the absence of a description (the tool sends none) and by its publication date, whether an interrupted upload was published, so the same video is never uploaded twice. They are read in memory and not stored, except the ID and link of the matching video.</td></tr>
         <tr><td>Status of each video the tool uploaded (privacy, upload and processing)</td><td>Know whether the video was published.</td></tr>
