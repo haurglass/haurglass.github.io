@@ -30,7 +30,7 @@
 </header>
 <main id="contenido" class="contenedor">
   <h1>Privacy Policy for Media Engine Publisher</h1>
-  <p class="meta">Effective <time datetime="2026-10-31">2026-10-31</time>. Responsible party: Fernando, owner and only user of the tool. Contact: <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
+  <p class="meta">Effective <time datetime="2026-11-07">2026-11-07</time>. Responsible party: Fernando, owner and only user of the tool. Contact: <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>
   <p>This policy explains what data Media Engine Publisher obtains from Google (YouTube) and from Meta (Facebook and Instagram), what it uses the data for, where it stores it, who it shares it with, how long it keeps it and how to request its deletion. A <a href="../es/privacidad.html" hreflang="es-419">Spanish version</a> with the same content is available.</p>
 
   <nav class="indice" aria-labelledby="toc-title">
@@ -56,19 +56,19 @@
   <ul>
     <li>Media Engine Publisher is used only by its owner, to publish the owner's own videos to the owner's own accounts, and it does not provide a service to anyone else.</li>
     <li>All data is stored only on the owner's computer, and access tokens are stored encrypted.</li>
-    <li>Data obtained from Google and Meta is not sold or shared with anyone. Each video is sent only to the platform it is published to. There are no ads and no cookies.</li>
+    <li>Data obtained from Google, Meta and TikTok is not sold or shared with anyone. Each video is sent only to the platform it is published to. There are no ads and no cookies.</li>
     <li>You can revoke access at any time. Tokens and data obtained from the platforms are deleted as soon as the owner disconnects the account, and that data within 7 days at most from when the tool detects that access was revoked. The log of what the owner published to the owner's own accounts is kept as a record of those publications.</li>
   </ul>
 
   <h2 id="the-tool">What the tool is and who uses it</h2>
-  <p>Media Engine Publisher is a program that runs on its owner's computer and that the owner uses to publish the short videos the owner produces to three accounts that belong to the owner: a YouTube channel, a Facebook Page and the Instagram professional account linked to that Page. It has no user sign-up, offers no accounts to other people and does not provide a service to anyone else. The owner publishes TikTok videos by hand, so the tool does not connect to TikTok and obtains no data from it.</p>
+  <p>Media Engine Publisher is a program that runs on its owner's computer and that the owner uses to publish the short videos the owner produces to accounts that belong to the owner: YouTube channels, Facebook Pages, the Instagram professional accounts linked to those Pages and TikTok accounts. It has no user sign-up, offers no accounts to other people and does not provide a service to anyone else. On TikTok it only sends each video to the inbox of the owner's account, and the owner publishes it by hand from the TikTok app.</p>
 
   <h2 id="youtube">Use of YouTube API Services</h2>
   <p>Media Engine Publisher uses YouTube API Services to upload videos to the owner's channels and to check the status of those videos. Using the tool is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> (https://www.youtube.com/t/terms) and the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a> (http://www.google.com/policies/privacy).</p>
   <p>Media Engine Publisher's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
   <h2 id="data">What data it obtains and why</h2>
-  <p>The owner authorizes the tool with OAuth 2.0 (the protocol Google and Meta use to let an application act on an account without knowing its password). With that authorization, the tool obtains only the following.</p>
+  <p>The owner authorizes the tool with OAuth 2.0 (the protocol Google, Meta and TikTok use to let an application act on an account without knowing its password). With that authorization, the tool obtains only the following.</p>
 
   <h3 id="data-google">From Google (YouTube)</h3>
   <p>Permissions: <code>youtube.upload</code> and <code>youtube.readonly</code>.</p>
@@ -104,14 +104,30 @@
       </tbody>
     </table>
   </div>
+  <h3 id="data-tiktok">From TikTok</h3>
+  <p>Permissions: <code>user.info.basic</code>, <code>user.info.profile</code> and <code>video.upload</code>. The tool only sends each video to the TikTok inbox of the owner's account; it never publishes on TikTok by itself. The owner opens the video in the TikTok app, writes its caption, chooses its privacy and publishes it.</p>
+  <div class="tabla">
+    <table>
+      <caption>Data obtained from TikTok</caption>
+      <thead>
+        <tr><th scope="col">Data</th><th scope="col">Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>OAuth access and refresh tokens</td><td>Send videos to the owner's TikTok inbox without knowing the owner's password.</td></tr>
+        <tr><td>Username and basic profile details of the authorized account</td><td>Confirm, before the authorization is stored, that the authorized account is the configured TikTok account and not another one. Only the username is used, and the other details are not stored.</td></tr>
+        <tr><td>Identifier and upload address TikTok assigns to each video sent to the inbox</td><td>Send the video in parts and resume or check an interrupted upload, so the same video is never sent twice.</td></tr>
+        <tr><td>Status of each video sent to the inbox (processing, sent to the inbox, published by the owner or failed) and, once the owner publishes it, the ID of the public post</td><td>Know whether the video reached the inbox and whether the owner published it, and keep its link.</td></tr>
+      </tbody>
+    </table>
+  </div>
   <p>The tool does not read or store statistics, comments, messages, followers or data about other people, and it does not access any account that does not belong to the owner.</p>
 
   <h2 id="storage">What it stores and where</h2>
   <p>Everything is stored only on the owner's computer, in a local database, and nothing is sent to servers of the owner or to cloud services. Specifically:</p>
   <ul>
     <li><strong>OAuth tokens</strong>, encrypted with AES-GCM (Advanced Encryption Standard in Galois/Counter Mode, an authenticated cipher) under a 256-bit key that only the owner holds and that is not stored with the data. Tokens exist decrypted only in memory, for the operation that uses them.</li>
-    <li><strong>IDs of the owner's accounts</strong> (channel, Page and Instagram account) and their display names.</li>
-    <li><strong>Data obtained from the platforms</strong>: for each video the tool published or tried to publish, the reference of each upload (the YouTube upload session address, the Instagram container or the Facebook video), which the tool needs to resume the upload or to check whether it was published; the ID and link the platform assigned to it; and the statuses observed on the platform (privacy, upload and processing). They are stored apart from the log so that they can be deleted, and the log keeps of each only a cryptographic fingerprint computed with a random value that is deleted with them, so once they are deleted the fingerprint no longer tells which video it was.</li>
+    <li><strong>IDs of the owner's accounts</strong> (channel, Page, Instagram account and TikTok username) and their display names.</li>
+    <li><strong>Data obtained from the platforms</strong>: for each video the tool published or tried to publish, the reference of each upload (the YouTube upload session address, the Instagram container, the Facebook video or the TikTok inbox upload), which the tool needs to resume the upload or to check whether it was published; the ID and link the platform assigned to it; and the statuses observed on the platform (privacy, upload and processing). They are stored apart from the log so that they can be deleted, and the log keeps of each only a cryptographic fingerprint computed with a random value that is deleted with them, so once they are deleted the fingerprint no longer tells which video it was.</li>
     <li><strong>A log of the owner's publications</strong>: which short was published, when, on which platform and to which account, with which title, the result of each attempt and the scheduling, attempt and publication dates. It is the audit record of what the owner published to the owner's own accounts.</li>
     <li><strong>Technical logs</strong> of the tool's operation (which operation ran, its result and how long it took), which are written to the terminal or to the system log, outside the database, and never contain tokens, passwords, upload session addresses or the content of the platforms' responses.</li>
     <li><strong>A record of each token refresh and of each refusal of a token by the platform</strong>, with its date and result, without the tokens.</li>
@@ -119,7 +135,7 @@
 
   <h2 id="sharing">Who the data is shared with</h2>
   <ul>
-    <li><strong>With the destination platform, and only with it.</strong> When publishing, the tool sends YouTube, Facebook or Instagram the video file, the title (to YouTube only; it sends Facebook and Instagram no text) and the publication settings (for example, the YouTube privacy setting or the declaration of AI-generated content), and each platform handles them under its own policy.</li>
+    <li><strong>With the destination platform, and only with it.</strong> When publishing, the tool sends YouTube, Facebook, Instagram or TikTok the video file, the title (to YouTube only; it sends Facebook, Instagram and TikTok no text) and the publication settings (for example, the YouTube privacy setting or the declaration of AI-generated content), and each platform handles them under its own policy.</li>
     <li>No data is sold, rented or given to anyone. The tool shows no ads and does not allow third parties to serve content or ads in it.</li>
   </ul>
 
@@ -129,9 +145,9 @@
 
   <h2 id="retention">How long data is kept</h2>
   <ul>
-    <li><strong>Tokens:</strong> while the account is connected. They are deleted immediately when the owner disconnects the account with <code>media-engine publish account forget</code>, which for Google first revokes the authorization (except with <code>--sin-revocar</code>). A revoked credential keeps its encrypted token until the owner runs that command, as explained in <a href="#revoke">How to revoke access</a>.</li>
+    <li><strong>Tokens:</strong> while the account is connected. They are deleted immediately when the owner disconnects the account with <code>media-engine publish account forget</code>, which for Google and TikTok first revokes the authorization (except with <code>--sin-revocar</code>). A revoked credential keeps its encrypted token until the owner runs that command, as explained in <a href="#revoke">How to revoke access</a>.</li>
     <li><strong>Data obtained from the platforms</strong> (reference of each upload, ID, link and observed statuses of each video): while the owner uses the tool and the account stays connected. It is deleted as soon as the owner disconnects the account with <code>media-engine publish account forget</code>, and within 7 days at most from when the tool detects that access was revoked: its periodic step (<code>media-engine publish tick</code>) deletes it as soon as it finds the account without a credential or with its credential revoked. The data of an upload in progress is kept until it is known whether it was published, because it is the only way to check, and it is deleted as soon as that is settled; if the outcome remains unknown, it is settled when the owner resolves it.</li>
-    <li><strong>Refreshing YouTube data:</strong> while the tool remains in use, its periodic step (<code>media-engine publish tick</code>) reads again, every 25 days, the status of each video it published to YouTube, before the 30 days set by YouTube's policies have passed. Nothing more is read about an upload YouTube marked as failed, and its data is deleted 25 days after the last reading; the same happens to a video whose history admits no more readings.</li>
+    <li><strong>Refreshing YouTube data:</strong> while the tool remains in use, its periodic step (<code>media-engine publish tick</code>) reads again, every 25 days, the status of each video it published to YouTube, before the 30 days set by YouTube's policies have passed. On TikTok, it reads the status of each video sent to the inbox every six hours, for about 16 days, to learn whether the owner published it. Nothing more is read about an upload YouTube marked as failed, and its data is deleted 25 days after the last reading; the same happens to a video whose history admits no more readings.</li>
     <li><strong>Log of the owner's publications</strong> (which short the owner published, when, with which text and to which account): kept while the owner uses the tool, as the audit record of the owner's own publications, and not part of the 7-day deletion.</li>
     <li><strong>Technical logs:</strong> the tool does not keep them itself. It writes them to the terminal, or to the system log of the owner's computer when it runs on its timer, and that log discards them according to its own size and age settings.</li>
   </ul>
@@ -142,19 +158,20 @@
     <li><strong>Google and YouTube:</strong> on your Google Account security page, <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>, choose Media Engine Publisher and remove its access.</li>
     <li><strong>Facebook:</strong> in Settings &amp; Privacy &gt; Settings &gt; Apps and Websites (<a href="https://www.facebook.com/settings?tab=applications">https://www.facebook.com/settings?tab=applications</a>). If the tool is listed as a business integration, remove it under Business Integrations (<a href="https://www.facebook.com/settings?tab=business_tools">https://www.facebook.com/settings?tab=business_tools</a>).</li>
     <li><strong>Instagram:</strong> in the Apps and Websites section of Instagram's settings (<a href="https://www.instagram.com/accounts/manage_access/">https://www.instagram.com/accounts/manage_access/</a>). Because the tool publishes to Instagram through the Facebook Page, removing it on Facebook also removes its access to Instagram.</li>
+    <li><strong>TikTok:</strong> in the TikTok app, under Settings and privacy &gt; Security and permissions &gt; Apps and services, choose Media Engine Publisher and remove its access.</li>
   </ul>
   <p>Once access is revoked, the stored tokens stop working immediately. The tool notices the next time it tries to use them and the platform refuses them, when refreshing a token, when publishing or when reading a video's status: it publishes nothing with them, marks the credential as revoked and holds that account's publications until the owner connects it again. Until it uses the access again, it does not know that access was revoked. A refusal the platform attributes to an expired token, or to a Facebook account that still has to be confirmed, is not taken for a revocation.</p>
   <p>A revoked credential keeps its encrypted token, which no longer works, until the owner deletes it with <code>media-engine publish account forget</code>, and <code>media-engine publish account status</code> shows it as revoked and reminds the owner to delete it. Data obtained from that platform is deleted within 7 days at most from when the tool detects the revocation, and immediately when the owner runs that command. The log of what the owner published is kept as a record of those publications.</p>
 
   <h2 id="deletion">How to request deletion of your data</h2>
   <p>Anyone can write to <a href="mailto:haurglass28@gmail.com?subject=Data%20deletion">haurglass28@gmail.com</a>, with the subject "Data deletion", to ask whether the tool stores any data about them or to request its deletion. To handle the request, the owner disconnects the account with <code>media-engine publish account forget</code>, which immediately deletes the tokens and the data obtained from the platforms (that of an upload in progress, as soon as it is settled whether it was published), all within 7 calendar days at most, and the deletion is confirmed by email. The log of what the owner published to the owner's own accounts (which short, when, with which text and to which account) is not deleted by such a request: it is kept as the audit record of the owner's own publications. The full steps are in <a href="data-deletion.html">How to delete your data</a>.</p>
-  <p class="aviso">Deleting the data stored by Media Engine Publisher does not in any way affect data stored by YouTube, Facebook or Instagram: videos already published remain on those platforms, and deleting them requires using YouTube, Facebook or Instagram directly.</p>
+  <p class="aviso">Deleting the data stored by Media Engine Publisher does not in any way affect data stored by YouTube, Facebook, Instagram or TikTok: videos already published, or waiting in the TikTok inbox, remain on those platforms, and deleting them requires using YouTube, Facebook, Instagram or TikTok directly.</p>
 
   <h2 id="security">Security</h2>
   <p>The key that encrypts the tokens is held only by the owner, outside any code repository. Tokens and secrets are never written to logs or error messages, and the public repository of this site contains no credentials.</p>
 
   <h2 id="changes">Changes to this policy</h2>
-  <p>If Media Engine Publisher ever uses data in a different way or for a different purpose, this policy will be updated before that happens, with a new effective date, and consent will be requested again on Google and on Meta.</p>
+  <p>If Media Engine Publisher ever uses data in a different way or for a different purpose, this policy will be updated before that happens, with a new effective date, and consent will be requested again on each platform.</p>
 
   <h2 id="contact">Contact</h2>
   <p>Questions and complaints about this policy or about Media Engine Publisher's privacy practices are handled at <a href="mailto:haurglass28@gmail.com">haurglass28@gmail.com</a>.</p>

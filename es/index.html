@@ -40,13 +40,13 @@
     <li>Programa cada publicación en los horarios fijos que define el dueño, por lo que él puede revisarla y cancelarla antes de que salga.</li>
     <li>Consulta el estado de cada video que publicó con el fin de confirmar que quedó publicado una sola vez, ya que una subida interrumpida nunca se repite a ciegas.</li>
   </ul>
-  <p>Los videos de TikTok el dueño los publica a mano, por lo que Media Engine Publisher no se conecta a TikTok ni tiene acceso a ninguna cuenta de esa plataforma.</p>
+  <p>En TikTok, la herramienta solo envía el video a la bandeja de entrada de la cuenta de TikTok del dueño que corresponde a ese canal. El dueño termina la publicación en la app de TikTok: escribe su texto, elige su privacidad y la publica.</p>
 
   <h2 id="quien">Quién la usa</h2>
   <p>Solo su dueño. Media Engine Publisher no tiene registro de usuarios, no ofrece cuentas a otras personas, no se vende ni se distribuye y no presta servicio a terceros: únicamente publica en cuentas que pertenecen a su dueño.</p>
 
-  <h2 id="permisos">Qué datos pide a Google y a Meta, y para qué</h2>
-  <p>El dueño autoriza la herramienta con OAuth 2.0, el protocolo con el que Google y Meta permiten que una aplicación actúe en una cuenta sin conocer su contraseña. Estos son los únicos permisos que pide:</p>
+  <h2 id="permisos">Qué datos pide a Google, a Meta y a TikTok, y para qué</h2>
+  <p>El dueño autoriza la herramienta con OAuth 2.0, el protocolo con el que Google, Meta y TikTok permiten que una aplicación actúe en una cuenta sin conocer su contraseña. Estos son los únicos permisos que pide:</p>
   <div class="tabla">
     <table>
       <caption>Permisos y su uso</caption>
@@ -61,13 +61,15 @@
         <tr><td>Facebook: <code>pages_manage_posts</code></td><td>Publicar los reels en la Página.</td></tr>
         <tr><td>Instagram: <code>instagram_basic</code></td><td>Leer los datos básicos de la cuenta y sus publicaciones recientes, con el fin de confirmar cada publicación sin duplicarla.</td></tr>
         <tr><td>Instagram: <code>instagram_content_publish</code></td><td>Publicar los reels en la cuenta.</td></tr>
+        <tr><td>TikTok: <code>user.info.basic</code> y <code>user.info.profile</code></td><td>Comprobar que la cuenta autorizada es la cuenta de TikTok del dueño que está configurada.</td></tr>
+        <tr><td>TikTok: <code>video.upload</code></td><td>Enviar los videos del dueño a la bandeja de entrada de su cuenta de TikTok, desde donde él los publica a mano.</td></tr>
       </tbody>
     </table>
   </div>
   <p>La herramienta no lee estadísticas, comentarios, mensajes ni seguidores. Qué guarda, dónde y durante cuánto tiempo está en la <a href="privacidad.html">política de privacidad</a>.</p>
 
   <h2 id="servicios">Servicios que usa</h2>
-  <p>Media Engine Publisher usa YouTube API Services (los servicios de API de YouTube) y las API de Meta para Facebook e Instagram. Al usarla se aplican los <a href="https://www.youtube.com/t/terms">Términos de Servicio de YouTube</a> y la <a href="http://www.google.com/policies/privacy">Política de Privacidad de Google</a>.</p>
+  <p>Media Engine Publisher usa YouTube API Services (los servicios de API de YouTube), las API de Meta para Facebook e Instagram, y el Login Kit y la Content Posting API de TikTok. Al usarla se aplican los <a href="https://www.youtube.com/t/terms">Términos de Servicio de YouTube</a> y la <a href="http://www.google.com/policies/privacy">Política de Privacidad de Google</a>.</p>
   <p>Sube videos a <a href="https://www.youtube.com/"><picture><source srcset="../img/youtube-blanco.png" media="(prefers-color-scheme: dark)"><img src="../img/youtube.png" alt="YouTube" width="89" height="30" style="vertical-align: middle"></picture></a></p>
 
   <h2 id="documentos">Documentos</h2>

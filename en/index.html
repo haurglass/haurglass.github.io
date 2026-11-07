@@ -40,13 +40,13 @@
     <li>Schedules each publication at fixed times the owner defines, so the owner can review it and cancel it before it goes out.</li>
     <li>Checks the status of every video it published to confirm it was published exactly once, because an interrupted upload is never blindly repeated.</li>
   </ul>
-  <p>The owner publishes TikTok videos by hand, so Media Engine Publisher does not connect to TikTok and has no access to any TikTok account.</p>
+  <p>On TikTok, the tool only sends the video to the inbox of the owner's TikTok account for that channel. The owner finishes the post in the TikTok app: writes its caption, chooses its privacy and publishes it.</p>
 
   <h2 id="who">Who uses it</h2>
   <p>Only its owner. Media Engine Publisher has no user sign-up, offers no accounts to other people, is not sold or distributed and does not provide a service to anyone else: it only publishes to accounts that belong to its owner.</p>
 
-  <h2 id="permissions">What it asks Google and Meta for, and why</h2>
-  <p>The owner authorizes the tool with OAuth 2.0, the protocol Google and Meta use to let an application act on an account without knowing its password. These are the only permissions it requests:</p>
+  <h2 id="permissions">What it asks Google, Meta and TikTok for, and why</h2>
+  <p>The owner authorizes the tool with OAuth 2.0, the protocol Google, Meta and TikTok use to let an application act on an account without knowing its password. These are the only permissions it requests:</p>
   <div class="tabla">
     <table>
       <caption>Permissions and their use</caption>
@@ -61,13 +61,15 @@
         <tr><td>Facebook: <code>pages_manage_posts</code></td><td>Publish reels to the Page.</td></tr>
         <tr><td>Instagram: <code>instagram_basic</code></td><td>Read the account's basic data and its recent posts, to confirm each publication without duplicating it.</td></tr>
         <tr><td>Instagram: <code>instagram_content_publish</code></td><td>Publish reels to the account.</td></tr>
+        <tr><td>TikTok: <code>user.info.basic</code> and <code>user.info.profile</code></td><td>Confirm that the authorized account is the owner's configured TikTok account.</td></tr>
+        <tr><td>TikTok: <code>video.upload</code></td><td>Send the owner's videos to the inbox of the owner's TikTok account, where the owner publishes them by hand.</td></tr>
       </tbody>
     </table>
   </div>
   <p>The tool does not read statistics, comments, messages or followers. What it stores, where and for how long is described in the <a href="privacy.html">Privacy Policy</a>.</p>
 
   <h2 id="services">Services it uses</h2>
-  <p>Media Engine Publisher uses YouTube API Services and Meta's APIs for Facebook and Instagram. Using it is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>.</p>
+  <p>Media Engine Publisher uses YouTube API Services, Meta's APIs for Facebook and Instagram, and TikTok's Login Kit and Content Posting API. Using it is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>.</p>
   <p>Uploads videos to <a href="https://www.youtube.com/"><picture><source srcset="../img/youtube-blanco.png" media="(prefers-color-scheme: dark)"><img src="../img/youtube.png" alt="YouTube" width="89" height="30" style="vertical-align: middle"></picture></a></p>
 
   <h2 id="documents">Documents</h2>
